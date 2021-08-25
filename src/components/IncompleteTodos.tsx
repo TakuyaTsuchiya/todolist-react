@@ -1,12 +1,24 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+
 import React from "react";
+import { jsx, css } from "@emotion/react";
 
 export const IncompleteTodos = (props) => {
   const { todos, onClickComplete, onClickDelete } = props;
+  const style = css`
+    background-color: tan;
+    width: 400px;
+    min-height: 200px;
+    padding: 8px;
+    margin: 8px;
+    border-radius: 8px;
+  `;
   return (
-    <div>
+    <div css={style}>
       未完了のタスク
       <ul>
-        {todos.map((todo, index) => {
+        {todos.map((todo: any, index: number) => {
           return (
             <div key={todo}>
               <li>{todo}</li>
